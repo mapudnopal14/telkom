@@ -1,0 +1,18 @@
+{
+  "name": "validasi-data",
+  "version": "1.0.0",
+  "description": "Testing mocking server",
+  "main": "index.js",
+  "scripts": {
+    "test-api": "node ./node_modules/mocha/bin/mocha ./api/test --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/ --timeout 180000",
+    "reports": "open 'reports/mochawesome/mochawesome.html'"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chai-json-schema": "^1.5.1",
+    "dotenv": "^7.0.0",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "supertest": "^3.1.0"
+  }
+}

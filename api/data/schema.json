@@ -1,0 +1,169 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "name": "sidik",
+            "orderNumber": "76542019",
+            "courier": "JNE",
+            "product": [
+                {
+                    "item": "laptop asus",
+                    "price": 12000000
+                },
+                {
+                    "item": "laptop acer",
+                    "price": 10000000
+                },
+                {
+                    "item": "Macbook pro",
+                    "price": 30000000
+                }
+            ],
+            "total": 20000000,
+            "code": 200,
+            "success": true
+        }
+    ],
+    "required": [
+        "name",
+        "orderNumber",
+        "courier",
+        "product",
+        "total",
+        "code",
+        "success"
+    ],
+    "properties": {
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "sidik"
+            ]
+        },
+        "orderNumber": {
+            "$id": "#/properties/orderNumber",
+            "type": "string",
+            "title": "The orderNumber schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "76542019"
+            ]
+        },
+        "courier": {
+            "$id": "#/properties/courier",
+            "type": "string",
+            "title": "The courier schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "JNE"
+            ]
+        },
+        "product": {
+            "$id": "#/properties/product",
+            "type": "array",
+            "title": "The product schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "item": "laptop asus",
+                        "price": 12000000
+                    },
+                    {
+                        "item": "laptop acer",
+                        "price": 10000000
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/product/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/product/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "item": "laptop asus",
+                                "price": 12000000
+                            }
+                        ],
+                        "required": [
+                            "item",
+                            "price"
+                        ],
+                        "properties": {
+                            "item": {
+                                "$id": "#/properties/product/items/anyOf/0/properties/item",
+                                "type": "string",
+                                "title": "The item schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "laptop asus"
+                                ]
+                            },
+                            "price": {
+                                "$id": "#/properties/product/items/anyOf/0/properties/price",
+                                "type": "integer",
+                                "title": "The price schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    12000000
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "total": {
+            "$id": "#/properties/total",
+            "type": "integer",
+            "title": "The total schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                20000000
+            ]
+        },
+        "code": {
+            "$id": "#/properties/code",
+            "type": "integer",
+            "title": "The code schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                200
+            ]
+        },
+        "success": {
+            "$id": "#/properties/success",
+            "type": "boolean",
+            "title": "The success schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                true
+            ]
+        }
+    },
+    "additionalProperties": true
+}
